@@ -80,4 +80,4 @@ typings/
 !.vscode/extensions.json
 
 # eslint config
-.eslintrc
+.eslintrc.js
