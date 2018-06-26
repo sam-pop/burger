@@ -1,13 +1,13 @@
 const mysql = require('mysql');
 
-function dbConnect(dbName) {
-    let connection = mysql.createConnection({
+function DBconnect() {
+    this.connection = mysql.createConnection({
         host: 'localhost',
         port: 3306,
         user: 'root',
         password: '',
-        database: dbName
+        database: 'burgers_db'
     });
 }
 
-module.exports = dbConnect;
+module.exports = DBconnect;
