@@ -11,7 +11,7 @@ const app = express(); // express app init
 
 // body-parser middleware
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }));
 app.use(bodyParser.json());
 
@@ -45,5 +45,5 @@ app.use(express.static('public'));
 
 // start listening on specified port
 app.listen(PORT, function () {
-    console.log('Listening on port: ' + PORT);
+  console.log('Listening on port: ' + PORT);
 });

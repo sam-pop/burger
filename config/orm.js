@@ -12,26 +12,29 @@ function ORM() {
 
     // returns all the rows in the db
     this.selectAll = function (callback) {
-        connection.query('SELECT * FROM ' + table, function (err, result) {
-            if (err) throw err;
-            callback(result);
-        });
+        connection.query('SELECT * FROM ' + table,
+            function (err, result) {
+                if (err) throw err;
+                callback(result);
+            });
     };
 
     // inserts a new row into the db
     this.insertOne = function (name, callback) {
-        connection.query('INSERT INTO ' + table + ' (' + colName + ') VALUES (?)', [name], function (err, result) {
-            if (err) throw err;
-            callback(result);
-        });
+        connection.query('INSERT INTO ' + table + ' (' + colName + ') VALUES (?)', [name],
+            function (err, result) {
+                if (err) throw err;
+                callback(result);
+            });
     };
 
     // updates a rows' boolean value (by id)
     this.updateOne = function (id, callback) {
-        connection.query('UPDATE ' + table + ' SET ' + colBool + ' = ' + colBoolVal + ' WHERE id = ?', [id], function (err, result) {
-            if (err) throw err;
-            callback(result);
-        });
+        connection.query('UPDATE ' + table + ' SET ' + colBool + ' = ' + colBoolVal + ' WHERE id = ?', [id],
+            function (err, result) {
+                if (err) throw err;
+                callback(result);
+            });
     };
 }
 
