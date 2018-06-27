@@ -21,12 +21,24 @@ app.use(express.static('public'));
 
 
 //TODO: delete - for TESTING only
-app.get('/', function (req, res) {
-    orm.selectAll(function (data) {
-        console.log(data);
-    });
-    res.status(200).end();
-});
+// app.get('/', function (req, res) {
+//     orm.selectAll(function (data) {
+//         console.log(data);
+//     });
+//     res.status(200).end();
+// });
+// app.get('/', function (req, res) {
+//     orm.insertOne('test-burger', function (data) {
+//         console.log(data.insertId);
+//     });
+//     res.status(200).end();
+// });
+// app.get('/', function (req, res) {
+//     orm.updateOne(6, function (data) {
+//         console.log(data);
+//     });
+//     res.status(200).end();
+// });
 
 
 
