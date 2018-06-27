@@ -33,12 +33,12 @@ app.use(express.static('public'));
 //     });
 //     res.status(200).end();
 // });
-app.get('/', function (req, res) {
-    orm.updateOne(2, function (data) {
-        console.log(data);
-    });
-    res.status(200).end();
-});
+// app.get('/', function (req, res) {
+//     orm.updateOne(2, function (data) {
+//         console.log(data);
+//     });
+//     res.status(200).end();
+// });
 
 
 
