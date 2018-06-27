@@ -12,9 +12,9 @@ function ORM() {
 
     // returns all the rows in the db
     this.selectAll = function (callback) {
-        connection.query('SELECT * FROM ' + table, function (err, data) {
+        connection.query('SELECT * FROM ' + table, function (err, result) {
             if (err) throw err;
-            callback(data);
+            callback(result);
         });
     };
 
