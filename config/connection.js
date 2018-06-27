@@ -1,12 +1,12 @@
 const mysql = require('mysql');
 
-function DBconnect() {
+function DBconnect(db_name) {
     this.connection = mysql.createConnection({
         host: 'localhost',
         port: 3306,
         user: 'root',
         password: '',
-        database: 'burgers_db'
+        database: db_name
     });
 }
 
