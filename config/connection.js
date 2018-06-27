@@ -8,6 +8,14 @@ function DBconnect(db_name) {
         password: '',
         database: db_name
     });
+
+    this.connection.connect(function (err) {
+        if (err) {
+            console.error("Error connecting to DB: " + err.stack);
+            return;
+        }
+        console.log("Connected to DB. threadId: #" + connection.threadId);
+    });
 }
 
 module.exports = DBconnect;

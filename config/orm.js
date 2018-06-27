@@ -1,12 +1,13 @@
 const DBconnect = require('./connection');
-
+/*
 const DB = 'burgers_db'; //database name
 const table = 'burgers'; //table name
 const colName = 'burger_name'; //the name column
 const colBool = 'devoured'; //the boolean column
-const colBoolVal = 'true'; //the new value of the boolean column 
+const ValColBool = 'true'; //the new value of the boolean column 
+*/
 
-function ORM() {
+function ORM(DB, table, colName, colBool, ValColBool) {
     //connect to DB
     this.connection = DBconnect(DB);
 
@@ -21,7 +22,7 @@ function ORM() {
 
     // inserts a new row into the db
     this.insertOne = function (name, callback) {
-        connection.query('INSERT INTO ' + table + ' (' + colName + ') VALUES (?)', [name],
+        connection.query('INSERT INTO ?? ( ?? ) VALUES (?)', [table, colName, name],
             function (err, result) {
                 if (err) throw err;
                 callback(result);
@@ -30,7 +31,7 @@ function ORM() {
 
     // updates a rows' boolean value (by id)
     this.updateOne = function (id, callback) {
-        connection.query('UPDATE ' + table + ' SET ' + colBool + ' = ' + colBoolVal + ' WHERE id = ?', [id],
+        connection.query('UPDATE ?? SET ??  = ? WHERE id = ?', [table, colBool, ValColBool, id],
             function (err, result) {
                 if (err) throw err;
                 callback(result);
