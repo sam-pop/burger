@@ -1,10 +1,10 @@
 const DBconnect = require('./connection');
 
 const DB = 'burgers_db'; //database name
-const table = 'burgers';
-const colName = 'burger_name';
-const colBool = 'devoured';
-const colBoolVal = 'true';
+const table = 'burgers'; //table name
+const colName = 'burger_name'; //the name column
+const colBool = 'devoured'; //the boolean column
+const colBoolVal = 'true'; //the new value of the boolean column 
 
 function ORM() {
     //connect to DB
@@ -33,7 +33,6 @@ function ORM() {
             callback(result);
         });
     };
-
 }
 
 module.exports = ORM;
