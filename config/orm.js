@@ -2,13 +2,15 @@ const DBconnect = require('./connection');
 
 const DB = 'burgers_db'; //database name
 const table = 'burgers';
-const fieldName = 'burger_name';
-const boolName = 'devoured';
+const colName = 'burger_name';
+const colBool = 'devoured';
+const colBoolVal = 'true';
 
 function ORM() {
+    //connect to DB
     this.connection = DBconnect(DB);
 
-    // returns all the burgers in the db
+    // returns all the rows in the db
     this.selectAll = function (callback) {
         connection.query('SELECT * FROM ' + table, function (err, data) {
             if (err) throw err;
@@ -16,17 +18,17 @@ function ORM() {
         });
     };
 
-    // inserts a new burger into the db
+    // inserts a new row into the db
     this.insertOne = function (name, callback) {
-        connection.query('INSERT INTO ' + table + ' (' + fieldName + ') VALUES (?)', [name], function (err, result) {
+        connection.query('INSERT INTO ' + table + ' (' + colName + ') VALUES (?)', [name], function (err, result) {
             if (err) throw err;
             callback(result);
         });
     };
 
-    // updates a burger to be devoured (by id)
+    // updates a rows' boolean value (by id)
     this.updateOne = function (id, callback) {
-        connection.query('UPDATE ' + table + ' SET ' + boolName + ' = true WHERE id=?', [id], function (err, result) {
+        connection.query('UPDATE ' + table + ' SET ' + colBool + ' = ' + colBoolVal + ' WHERE id = ?', [id], function (err, result) {
             if (err) throw err;
             callback(result);
         });
