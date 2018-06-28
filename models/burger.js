@@ -22,6 +22,7 @@ function Burger() {
             callback(res);
         });
     };
+
 }
 
 module.exports = Burger;
