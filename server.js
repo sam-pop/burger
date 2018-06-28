@@ -7,9 +7,6 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 8080;
 const routes = require('./controllers/burgers_controller');
 const app = express(); // express app init
-const ORM = require('./config/orm');
-let orm = new ORM(); // create new orm instance
-
 
 // body-parser middleware
 app.use(bodyParser.urlencoded({
