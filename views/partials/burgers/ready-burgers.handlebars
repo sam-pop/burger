@@ -1,0 +1,7 @@
+<ul class="list-group list-group-flush">
+    {{#each burgers}} {{#if devoured}}
+    <li class="list-group-item">
+        {{this.burger_name}}
+    </li>
+    {{/if}} {{/each}}
+</ul>
