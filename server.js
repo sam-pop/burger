@@ -22,20 +22,20 @@ app.use(express.static('public'));
 
 
 //TODO: delete - for TESTING only
+app.get('/', function (req, res) {
+  orm.selectAll('burgers', function (data) {
+    console.log(data);
+  });
+  res.status(200).end();
+});
 // app.get('/', function (req, res) {
-//     orm.selectAll(function (data) {
-//         console.log(data);
-//     });
-//     res.status(200).end();
-// });
-// app.get('/', function (req, res) {
-//     orm.insertOne('test-burger', function (data) {
+//     orm.insertOne('burgers','burger_name','test-burger', function (data) {
 //         console.log(data.insertId);
 //     });
 //     res.status(200).end();
 // });
 // app.get('/', function (req, res) {
-//     orm.updateOne(2, function (data) {
+//     orm.updateOne('burgers','devoured','true',2, function (data) {
 //         console.log(data);
 //     });
 //     res.status(200).end();
