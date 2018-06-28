@@ -1,9 +1,22 @@
-<h1>Burgers test</h1>
+<h1>Bob's Burgers - KOT (Kitchen Order Ticket)</h1>
+<h2>Add burger to kitchen order: (Bob won't be happy...)</h2>
 
+<h2>Ordered burgers:</h2>
 <ul>
-    {{#each burgers}}
+    {{#each burgers}} {{#unless devoured}}
+    <li>
+        {{this.burger_name}}
+        <button class="eatItBtn" data-id="{{id}}" data-devoured="{{devoured}}">
+            Take it away!
+        </button>
+    </li>
+    {{/unless}} {{/each}}
+</ul>
+<h2>Burgers Prepared:</h2>
+<ul>
+    {{#each burgers}} {{#if devoured}}
     <li>
         {{this.burger_name}}
     </li>
-    {{/each}}
+    {{/if}} {{/each}}
 </ul>
