@@ -11,4 +11,21 @@ $(function () {
         );
     });
 
+    $(".addBurger").on("submit", function (event) {
+        event.preventDefault();
+
+        var burgerToAdd = {
+            name: $("#burgerName").val().trim()
+        };
+
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: burgerToAdd
+        }).then(
+            function () {
+                $("#burgerName").val('');
+                location.reload();
+            }
+        );
+    });
 }); //END OF $
