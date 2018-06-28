@@ -14,7 +14,6 @@ function Burger() {
         orm.insertOne('burgers', 'burger_name', name, function (res) {
             callback(res);
         });
-
     };
 
     this.updateOne = function (id, callback) {
