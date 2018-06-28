@@ -1,6 +1,9 @@
 const mysql = require('mysql');
 
-function DBconnect(db_name) {
+const db_name = 'burgers_db'; //database name
+
+function Connection() {
+    //config a db connection
     this.connection = mysql.createConnection({
         host: 'localhost',
         port: 3306,
@@ -9,6 +12,7 @@ function DBconnect(db_name) {
         database: db_name
     });
 
+    // connect to the database
     this.connection.connect(function (err) {
         if (err) {
             console.error("Error connecting to DB: " + err.stack);
@@ -18,4 +22,4 @@ function DBconnect(db_name) {
     });
 }
 
-module.exports = DBconnect;
+module.exports = Connection;

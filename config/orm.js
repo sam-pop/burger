@@ -1,5 +1,6 @@
-const DBconnect = require('./connection');
-/*
+const Connection = require('./connection');
+/* FIXME: for reference only
+------------------------------
 const DB = 'burgers_db'; //database name
 const table = 'burgers'; //table name
 const colName = 'burger_name'; //the name column
@@ -7,9 +8,9 @@ const colBool = 'devoured'; //the boolean column
 const ValColBool = 'true'; //the new value of the boolean column 
 */
 
-function ORM(DB) {
+function ORM() {
     //connect to DB
-    this.connection = DBconnect(DB);
+    this.connection = Connection();
 
     // returns all the rows in the db
     this.selectAll = function (table, callback) {
