@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// set handlebars
+// set handlebars engine
 app.engine("handlebars", exphbs({
   defaultLayout: "main"
 }));
@@ -23,6 +23,7 @@ app.set("view engine", "handlebars");
 // serve static files from the public dir
 app.use(express.static('public'));
 
+// use routes
 app.use(routes);
 
 // start listening on specified port
