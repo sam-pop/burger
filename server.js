@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 // Variables
 const PORT = process.env.PORT || 8080;
-const routes = require('./controllers/burgers_controller');
+const routes = require('./controllers/burgers_controller'); // controller routes
 const app = express(); // express app init
 
 // body-parser middleware
