@@ -1,4 +1,5 @@
 $(function () {
+
     //'Eat it' button
     $('.eatItBtn').on('click', function (event) {
         let id = $(this).data('id');
