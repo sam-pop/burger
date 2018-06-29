@@ -4,8 +4,8 @@ const db_name = 'burgers_db'; //database name
 
 function Connection() {
     // for heroku deployment 
-    if (process.env.JAWDB_URL) {
-        this.connection = mysql.createConnection(process.env.JAWDB_URL);
+    if (process.env.JAWSDB_URL) {
+        this.connection = mysql.createConnection(process.env.JAWSDB_URL);
     } else {
         // config a db connection
         this.connection = mysql.createConnection({
