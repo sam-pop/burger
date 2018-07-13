@@ -1,6 +1,6 @@
 # BOB's Burgers - KOT
 
-A simple `Kitchen Order Tickets (KOT)` system built to demonstrate the usage mySQL, Node.js, Express, Handlebars and a homemade ORM combined with the of MVC design pattern.
+A simple `Kitchen Order Tickets (KOT)` system built to demonstrate the usage mySQL, Node.js, Express, Handlebars and a homemade ORM combined with a generous amount of the of MVC design pattern.
 
 ## Demo
 [Click here for a live demo](https://dry-oasis-58010.herokuapp.com/)
